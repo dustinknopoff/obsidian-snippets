@@ -15,7 +15,7 @@ date: # today's date in YYYY-MM-DD format
 taxonomies:
   tags: # a list of tags
   kind:
-    - # either: plugins or styling
+    - # either: plugins or styling or tips
 extra:
   author: # your name or handles
 ```

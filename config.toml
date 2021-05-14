@@ -12,6 +12,8 @@ generate_feed = true
 
 taxonomies = [{name = "tags", rss = true, paginate_by = 30}, {name = "kind", rss = true, paginate_by = 30}]
 
+title = "Obsidian Snippets"
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
