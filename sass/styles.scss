@@ -53,8 +53,8 @@ main {
         transition: 300ms all ease-in-out;
         margin: auto;
 
-        img {
-            width: 150px;
+        img,video {
+            width: 300px;
         }
     }
     &:hover {

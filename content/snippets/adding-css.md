@@ -12,4 +12,4 @@ extra:
   author: foreveryone
 ---
 
-[imgur gif](https://imgur.com/aB3eMRn)
+<video src="https://i.imgur.com/aB3eMRn.mp4" controls></video>
