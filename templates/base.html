@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{%block title %}{{config.title}}{%endblock title%}</title>
+        <link rel="stylesheet" type="text/css" href={{ get_url(path="reset.css", trailing_slash=false)}} />
+        <link rel="stylesheet" type="text/css" href={{ get_url(path="styles.css", trailing_slash=false)}} />
+        <link rel="stylesheet" type="text/css" href={{ get_url(path="search.css", trailing_slash=false)}} />
+        <meta charset="utf-8" />
+        <meta name="color-scheme" content="light dark">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        {% if config.generate_feed %}
+        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+      {% endif %}
+    </head>
+    <body>
+        <nav>
+            <h1>
+            <a href="/" class="clear">
+                Obsidian Snippets
+            </a>
+            </h1>
+             <div class="search-container">
+                <input type="search" id="search" class="search" placeholder="active file"/>
+                <ul class="search-results">
+                <div class="search-results__items"></div>
+                </ul>
+            </div>
+            <ul>
+                <li><a href="/tags/dataview">dataview</a></li>
+                <li><a href="/kind/styling">styling</a></li>
+                <li><a href="/kind/plugins">plugins</a></li>
+            </ul>
+        </nav>
+        <main>
+        {% block content %} {% endblock %}
+        </main>
+        <footer>
+            <p>Want to submit a snippet? Submit a PR<p>
+        </footer>
+    </body>
+    <script async defer type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") }}"></script>
+    <script async defer type="text/javascript" src="{{ get_url(path="search_index.en.js") }}"></script>
+    <script async defer type="text/javascript" src="{{ get_url(path="search.js") }}"></script>
+    <script type="text/javascript">
+</html>

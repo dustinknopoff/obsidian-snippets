@@ -1,0 +1,21 @@
+{% import "macros/snippet.html" as snippet %}
+{% macro section(paginator,title,mono=false) %}
+    <h2 {% if mono %}class="mono"{% endif %}>{{title}}</h2>
+
+    <ul class="snippets">
+    {% for page in paginator.pages %}
+        <li>
+        {{snippet::snippet(page=page, short=true)}}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <nav class="pagination">
+        {% if paginator.previous %}
+            <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+        {% endif %}
+        {% if paginator.next %}
+            <a class="next" href="{{ paginator.next }}">Next ›</a>
+        {% endif %}
+    </nav>
+{% endmacro%}

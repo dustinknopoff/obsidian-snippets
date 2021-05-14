@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% import "macros/section.html" as section %}
+
+{% block content %}
+    {% set title = section.title %}
+    {{section::section(paginator=paginator, title=title)}}
+{% endblock%}

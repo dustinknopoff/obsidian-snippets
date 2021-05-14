@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% import "macros/snippet.html" as snippet %}
+{% import "macros/section.html" as section %}
+
+{% block content %}
+    {% set title = term.name %}
+    {{section::section(paginator=paginator, title=title, mono=true)}}
+{% endblock%}

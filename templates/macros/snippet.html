@@ -1,0 +1,26 @@
+{% macro snippet(page, short=false) %}
+    <div {% if short %} class="card mini" {% else %} class="card" {% endif %}>
+        <div class="top">
+            <a href="{{page.permalink}}">
+                <h3>{{page.title}}</h3>
+            </a>
+            {% set tag = page.taxonomies | get(key="kind") | first %}
+            <span class="kind">
+                <a href="/kind/{{tag}}">
+                    {{tag}}
+                </a>
+            </span>
+        </div>
+        <ul class="tags">
+            {% for tag in page.taxonomies | get(key="tags") %}
+                <li>
+                    <a href="/tags/{{tag}}">
+                        {{tag}}
+                    </a>
+                <li>
+            {% endfor %}
+        </ul>
+
+        <div>{{ page.content | safe }}</div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Kinds</h2>
+    <ul>
+        {% for term in terms %}
+            <li>
+                <a href="/tags/{{term.name}}">
+                    {{term.name}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock%}
