@@ -3,7 +3,6 @@
 
 {% block content %}
 {% set section = get_section(path="snippets/_index.md") %} 
-
 {% for year, posts in section.pages | group_by(attribute="year") %}
     <div>
         <h2>{{ year }}</h2>

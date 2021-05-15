@@ -1,11 +1,13 @@
 :root {
     --monospace: "Fira Code", monospace;
     --headline: "Publico Headline", -apple-system, "Helvetica","Arial";
+    --background: #FCFCFD;
+    --background-highlight: white;
 }
 
 body,html {
     font-size: 16px;
-    background: #FCFCFD;
+    background: var(--background);
     width: 100vw;
     height: 100vh;
     font-family: -apple-system, "Helvetica","Arial";
@@ -46,7 +48,7 @@ main {
     max-width: 640px;
     margin: 0 auto;
     &.mini {
-        background: white;
+        background: var(--background-highlight);
         width: 30vw;
         border: 1px solid rgba(128,128,128,0.4);
         border-radius: 13px;
@@ -97,9 +99,16 @@ main {
     .kind {
         text-transform: uppercase;
         font-family: var(--monospace);
-        background:azure;
+        background:#8fceff;
+        color: black;
+        border-radius: 4px;
         padding: 10px;
         height: min-content;
+        transition: 300ms all ease-in-out;
+
+        &:hover {
+            color: #1a1a1a;
+        }
     }
 
     img,video {
@@ -130,23 +139,43 @@ footer {
     bottom: 0;
     text-align: center;
     width: 100%;
+    background: var(--background);
+}
+
+.resource {
+    text-align: center;
+    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
     .snippets {
         flex-direction: column;
-        width: 100vw;
+        width: 90vw;
         margin: 0;
         padding: 0;
         .card.mini {
             width: 80vw;
             margin: 0 auto;
+            img,video {
+                width: 150px;
+            }
         }
-        padding-bottom: 40px;
+        padding-bottom: 80px;
     }
 
     nav {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1a1a1a;
+        --background-highlight: black;
+    }
+
+    a {
+        color: #8fceff;
     }
 }
