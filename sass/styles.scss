@@ -54,6 +54,8 @@ main {
         border-radius: 13px;
         transition: 300ms all ease-in-out;
         margin: auto;
+        max-height: 40vh;
+        overflow-y: hidden;
 
         img,video {
             width: 300px;
@@ -123,6 +125,7 @@ main {
    > * {
         margin: 20px;
    }
+    padding-bottom: 80px;
 }
 
 .mono {
@@ -160,7 +163,6 @@ footer {
                 width: 150px;
             }
         }
-        padding-bottom: 80px;
     }
 
     nav {
