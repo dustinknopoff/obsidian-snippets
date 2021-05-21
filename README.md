@@ -22,6 +22,6 @@ extra:
 
 Then commit and submit a PR to this repository.
 
-## How to video from @gitobsidiantutorial
+## How to video from @foreveryone
 
 [![how to video](https://res.cloudinary.com/dknopoff/video/upload/v1621627517/pr-example.png)](https://res.cloudinary.com/dknopoff/video/upload/f_auto/v1621627517/pr-example.webm)
