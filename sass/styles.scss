@@ -60,7 +60,7 @@ main {
         padding-bottom: 5px;
 
         img,video {
-            width: 300px;
+            max-width: 300px;
         }
     }
     &:hover {
@@ -116,7 +116,7 @@ main {
     }
 
     img,video {
-        width: 60vw;
+        max-width: 60vw;
     }
 }
 
