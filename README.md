@@ -21,3 +21,7 @@ extra:
 ```
 
 Then commit and submit a PR to this repository.
+
+## How to video from @gitobsidiantutorial
+
+<video src="https://res.cloudinary.com/dknopoff/video/upload/f_auto/v1621627517/pr-example.webm" controls></video>
