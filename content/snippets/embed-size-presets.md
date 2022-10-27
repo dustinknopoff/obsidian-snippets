@@ -7,12 +7,6 @@ A number of classes to adjust the size of embeds in Obsidian, they can be used t
 ![[note|h-10vh]] - sets the height of the embed to 10% of the viewport height
 ![[note|h-100px]] - sets the height of the embed to 100 pixels
 
-The following classes are available:
-.h-100 .. h-2990 in steps of 10
-.h-1vh .. h-199vh in steps of 1
-.w-100 .. w-2990 in steps of 10
-.w-1vw .. w-199vw in steps of 1
-
 
 They can be combined using spaces, for example:
 ![[note|w-10vw h-10vh]]
@@ -20,7 +14,78 @@ They can be combined using spaces, for example:
 ![[note|w-100px h-10vh]]
 ![[note|w-10vw h-100px]]
 
+
+An option to style the embed is available, too, through the class `styled`:
+![[note|styled]]
+
+
+It can be used in combination with the other classes, for example:
+![[note|w-10vw h-10vh styled]]
+![[note|w-100px h-100px styled]]
+![[note|w-100px h-10vh styled]]
+![[note|w-10vw h-100px styled]]
+
+
+The following classes are available:
+.h-100 .. h-2990 in steps of 10
+.h-1vh .. h-199vh in steps of 1
+.w-100 .. w-2990 in steps of 10
+.w-1vw .. w-199vw in steps of 1
+
+
 */
+
+/* GENERAL IMPROVEMENTS */
+.internal-embed.is-loaded[alt~="styled"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.internal-embed.is-loaded[alt~="styled"] .markdown-embed {
+    padding: 0;
+    border: none;
+    position: relative;
+}
+
+.internal-embed.is-loaded[alt~="styled"] .markdown-embed-title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--background-secondary);
+}
+
+.internal-embed.is-loaded[alt~="styled"] .markdown-embed-link {
+    z-index: 400;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.internal-embed.is-loaded[alt~="styled"] .markdown-embed-link:hover::after {
+    content: "";
+    position: sticky;
+    top: 300px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid var(--background-primary);
+    z-index: 399;
+}
+
+.internal-embed.is-loaded[alt~="styled"] .markdown-embed-link svg {
+    position: sticky;
+    top: 0.5rem;
+}
+
+.internal-embed.is-loaded[alt~="styled"] .markdown-embed-content {
+    padding: 10px;
+}
 
 /* HEIGHT OF EMBEDS */
 .internal-embed.is-loaded[alt~="h-100"] {
@@ -4916,16 +4981,3 @@ They can be combined using spaces, for example:
     overflow: auto;
 }
 
-
-
-/**
-A number of classes to adjust the size of embeds in Obsidian, they can be used through the pipeline syntax. Some examples:
-
-![[note|w-10vw]] - sets the width of the embed to 10% of the viewport width
-![[note|w-100px]] - sets the width of the embed to 100 pixels
-![[note|h-10vh]] - sets the height of the embed to 10% of the viewport height
-![[note|h-100px]] - sets the height of the embed to 100 pixels
-![[note|w-10vw|h-10vh]] - sets the width and height of the embed to 10% of the viewport width and height respectively
-![[note|w-100px|h-100px]] - sets the width and height of the embed to 100 pixels
-
-*/
